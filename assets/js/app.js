@@ -1,5 +1,4 @@
-// time variables
-
+// variables 
 var $currentDay = $("#currentDay");
 var $timeBlocks = $(".time-block");
 var $schedule = $(".schedule");
@@ -7,27 +6,45 @@ var currentDate = moment().format("dddd, MMMM Do");
 var currentHour = moment().format("H");
 
 // task array
-var tasks = [];
+var taskArr = [];
 
+// set up array 
+function setArray(){
 
-// display schedule
+    // for each time block
+    $timeBlocks.each(function(){
+        var $thisBlock = $(this);
+        var thisHour = parseInt($thisBlock.attr("data-hour"));
 
-function displaySchedule(){
-    // load tasks
-    tasks = localStorage.getItem("tasks");
-    tasks = JSON.parse(tasks);
+        var taskObject = {
+            hour: thisHour,
+            text: "",
+        }
+        // add object to array
+        taskArr.push(taskObject);
+    });
 
-    // determine data-hour
-    for (var i = 0; i < tasks.length; i++){
-        var hour = tasks[i].hour;
-        var taskText = tasks[i].text;
+    // save array to local storage
+    localStorage.setItem("tasks", JSON.stringify(taskArr));
+    console.log(taskArr);
 
-        $("[data-hour =" + hour + "]").children("textarea").value(taskText);
-    }
-
-    console.log(tasks);
 }
 
+// set timeblock colors based on past, present, future
+function setBlockColor(){
+    $timeBlocks.each(function(){
+        var $thisBlock = $(this);
+        var thisHour = parseInt($thisBlock.attr("data-hour"));
 
-// save to local storage
-localStorage.setItem("tasks", JSON.stringify(tasks));
+        // add styling based on day
+        if (thisHour == currentHour) {
+            $thisBlock.addClass("present").removeClass("past future");
+        }
+        if (thisHour < currentHour) {
+            $thisBlock.addClass("past").removeClass("present future");
+        }
+        if (thisHour > currentHour) {
+            $thisBlock.addClass("future").removeClass("past present");
+        }
+    });
+}
