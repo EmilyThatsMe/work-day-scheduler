@@ -19,92 +19,96 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Work Day Scheduler</title>
+    <title>Work Day Scheduler - Challenge 5: Third-Party APIs</title>
   </head>
 
   <body>
+    <!-- Header -->
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <!-- Time block container -->
+
     <div class="container">
-      <!-- 9am block -->
-      <div class="input-group input-group-lg" data-hour="9">
-        <div class="input-group-prepend">
-          <span class="input-group-text time-block block1"></span>
-        </div>
-        <input type="text" class="form-control form9" aria-label="Large" />
-        <button class="btn saveBtn"><i class="far fa-save"></i></button>
+      <!-- Timeblocks start here -->
+      <!-- 9AM -->
+      <div class="row time-block" data-hour="9">
+        <div class="col-2 col-lg-1 hour">9 AM</div>
+        <textarea class="col-8 col-lg-10"></textarea>
+        <button class=" col-2 col-lg-1 btn btn-block saveBtn d-flex justify-content-center align-items-center">
+          <i class="fas fa-save"></i>
+          </button>
       </div>
-      <!-- 10am block -->
-      <div class="input-group input-group-lg" data-hour="10">
-        <div class="input-group-prepend">
-          <span class="input-group-text time-block block2"></span>
-        </div>
-        <input type="text" class="form-control form10" aria-label="Large" />
-        <button class="btn saveBtn"><i class="far fa-save"></i></button>
+            <!-- 10AM -->
+            <div class="row time-block" data-hour="10">
+              <div class="col-2 col-lg-1 hour">10 AM</div>
+              <textarea class="col-8 col-lg-10"></textarea>
+              <button class=" col-2 col-lg-1 btn btn-block saveBtn d-flex justify-content-center align-items-center">
+                <i class="fas fa-save"></i>
+                </button>
+            </div>
+                  <!-- 11AM -->
+      <div class="row time-block" data-hour="11">
+        <div class="col-2 col-lg-1 hour">11 AM</div>
+        <textarea class="col-8 col-lg-10"></textarea>
+        <button class=" col-2 col-lg-1 btn btn-block saveBtn d-flex justify-content-center align-items-center">
+          <i class="fas fa-save"></i>
+          </button>
       </div>
-      <!-- 11am block -->
-      <div class="input-group input-group-lg" data-hour="11">
-        <div class="input-group-prepend">
-          <span class="input-group-text time-block block3"></span>
-        </div>
-        <input type="text" class="form-control form9" aria-label="Large" />
-        <button class="btn saveBtn"><i class="far fa-save"></i></button>
-      </div>
-      <!-- 12pm block -->
-      <div class="input-group input-group-lg" data-hour="12">
-        <div class="input-group-prepend">
-          <span class="input-group-text time-block block4"></span>
-        </div>
-        <input type="text" class="form-control form12" aria-label="Large" />
-        <button class="btn saveBtn"><i class="far fa-save"></i></button>
-      </div>
-      <!-- 1pm block -->
-      <div class="input-group input-group-lg" data-hour="1">
-        <div class="input-group-prepend">
-          <span class="input-group-text time-block block5"></span>
-        </div>
-        <input type="text" class="form-control form1" aria-label="Large" />
-        <button class="btn saveBtn"><i class="far fa-save"></i></button>
-      </div>
-      <!-- 2pm block -->
-      <div class="input-group input-group-lg" data-hour="2">
-        <div class="input-group-prepend">
-          <span class="input-group-text time-block block6"></span>
-        </div>
-        <input type="text" class="form-control form2" aria-label="Large" />
-        <button class="btn saveBtn"><i class="far fa-save"></i></button>
-      </div>
-      <!-- 3pm block -->
-      <div class="input-group input-group-lg" data-hour="3">
-        <div class="input-group-prepend">
-          <span class="input-group-text time-block block7"></span>
-        </div>
-        <input type="text" class="form-control form3" aria-label="Large" />
-        <button class="btn saveBtn"><i class="far fa-save"></i></button>
-      </div>
-      <!-- 4pm block -->
-      <div class="input-group input-group-lg" data-hour="4">
-        <div class="input-group-prepend">
-          <span class="input-group-text time-block block8"></span>
-        </div>
-        <input type="text" class="form-control form4" aria-label="Large" />
-        <button class="btn saveBtn"><i class="far fa-save"></i></button>
-      </div>
-      <!-- 5pm block -->
-      <div class="input-group input-group-lg" data-hour="5">
-        <div class="input-group-prepend">
-          <span class="input-group-text time-block block9"></span>
-        </div>
-        <input type="text" class="form-control form5" aria-label="Large" />
-        <button class="btn saveBtn"><i class="far fa-save"></i></button>
-      </div>
-    </div>
+            <!-- 12PM -->
+            <div class="row time-block" data-hour="12">
+              <div class="col-2 col-lg-1 hour">12 PM</div>
+              <textarea class="col-8 col-lg-10"></textarea>
+              <button class=" col-2 col-lg-1 btn btn-block saveBtn d-flex justify-content-center align-items-center">
+                <i class="fas fa-save"></i>
+                </button>
+            </div>
+                        <!-- 1PM -->
+                        <div class="row time-block" data-hour="1">
+                          <div class="col-2 col-lg-1 hour">1 PM</div>
+                          <textarea class="col-8 col-lg-10"></textarea>
+                          <button class=" col-2 col-lg-1 btn btn-block saveBtn d-flex justify-content-center align-items-center">
+                            <i class="fas fa-save"></i>
+                            </button>
+                        </div>
+                                                <!-- 2PM -->
+                                                <div class="row time-block" data-hour="2">
+                                                  <div class="col-2 col-lg-1 hour">2 PM</div>
+                                                  <textarea class="col-8 col-lg-10"></textarea>
+                                                  <button class=" col-2 col-lg-1 btn btn-block saveBtn d-flex justify-content-center align-items-center">
+                                                    <i class="fas fa-save"></i>
+                                                    </button>
+                                                </div>
+                                                                        <!-- 3PM -->
+                        <div class="row time-block" data-hour="3">
+                          <div class="col-2 col-lg-1 hour">3 PM</div>
+                          <textarea class="col-8 col-lg-10"></textarea>
+                          <button class=" col-2 col-lg-1 btn btn-block saveBtn d-flex justify-content-center align-items-center">
+                            <i class="fas fa-save"></i>
+                            </button>
+                        </div>
+                                                <!-- 4PM -->
+                                                <div class="row time-block" data-hour="4">
+                                                  <div class="col-2 col-lg-1 hour">4 PM</div>
+                                                  <textarea class="col-8 col-lg-10"></textarea>
+                                                  <button class=" col-2 col-lg-1 btn btn-block saveBtn d-flex justify-content-center align-items-center">
+                                                    <i class="fas fa-save"></i>
+                                                    </button>
+                                                </div>
+                                                                        <!-- 5PM -->
+                        <div class="row time-block" data-hour="5">
+                          <div class="col-2 col-lg-1 hour">5 PM</div>
+                          <textarea class="col-8 col-lg-10"></textarea>
+                          <button class=" col-2 col-lg-1 btn btn-block saveBtn d-flex justify-content-center align-items-center">
+                            <i class="fas fa-save"></i>
+                            </button>
+                        </div>
+
+</div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>
