@@ -34,7 +34,7 @@ function setBlockColor(){
         var $thisBlock = $(this);
         var thisHour = parseInt($thisBlock.attr("data-hour"));
 
-        // add styling based on day
+        // add styling based on past/present/future 
         if (thisHour == currentHour) {
             $thisBlock.addClass("present").removeClass("past future");
         }
@@ -62,6 +62,23 @@ function displaySchedule() {
     console.log(taskArr);
 }
 
+// load schedule
+$(document).ready(function(){
+    // determine proper color
+    setBlockColor();
+    // check if there are no tasks in local storage
+    if(!localStorage.getItem("tasks")){
+        // set array
+        setArray();
+    }
+    // show current day
+    $currentDay.text(currentDate);
+    // render schedule
+    displaySchedule();
+    // save schedule on click
+    $schedule.on("click", "button", saveSchedule);
+});
+
 // save schedule to local storage
 function saveSchedule(){
 
@@ -78,16 +95,3 @@ function saveSchedule(){
     displaySchedule();
 }
 
-// load schedule
-$(document).ready(function(){
-    setBlockColor();
-    if(!localStorage.getItem("tasks")){
-        setArray();
-    }
-    // show current day
-    $currentDay.text(currentDate);
-    // render schedule
-    displaySchedule();
-    // save schedule on click
-    $schedule.on("click", "button", saveSchedule);
-});
